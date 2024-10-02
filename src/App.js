@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { PublicationScroll } from './components/PublicationScroll';
+import { NavBar } from './components/NavBar';
+import { NewPost } from "./components/NewPost";
+import { ComponentPublicationsContext } from './components/GlobalPublicationsContext';
+import { Routes, Route, BrowserRouter, HashRouter } from 'react-router-dom';
+import { useContextOfTheme } from './components/ThemeContext';
 
 function App() {
+  const { dark } = useContextOfTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ComponentPublicationsContext>
+      <HashRouter>
+      <div className={`App ${ dark == false ? "dark" : "".trim() }`}>
+        <NavBar />
+        <Routes>
+          <Route path= "/" element = {
+          <main className="main">
+            <NewPost />
+            <PublicationScroll />
+          </main>
+          }/>
+          <Route path="/post" element={<NewPost />}/>
+        </Routes>
+        </div>
+        </HashRouter>
+      </ComponentPublicationsContext>
   );
 }
 

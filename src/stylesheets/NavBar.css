@@ -1,0 +1,84 @@
+.nav {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 60px; 
+    background-color: white; 
+    border-right: 1px solid #ddda; 
+    z-index: 1000; 
+}
+
+body:has(.App.dark) .nav{
+    background-color: #000;
+    color: #fff;
+    border-right: 1px solid #222;
+}
+
+.nav__general-container{
+    padding: 18px 16px;
+    height: 95dvh;
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    transition: scale .3s;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.nav__item:hover{
+    scale: 1.2;
+    background-color: #ddda;
+}
+
+
+.nav-icon{
+    font-size: 1.3rem;
+}
+
+.link{
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:has(.App.dark) .link{
+    color: #fff;
+}
+
+
+.nav__item.post-icon{
+    background-color: #48e;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0;
+}
+
+#postIcon{
+    color: #fff;
+}
+
+.post-icon:hover{
+    background-color: #48e;
+}
+
+.twitter-icon{
+    color: #48e;
+    font-size: 1.5rem;
+}

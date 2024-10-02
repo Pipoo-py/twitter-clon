@@ -1,0 +1,123 @@
+.publication__container{
+    margin: auto;
+    padding: 16px;
+    border-bottom: 1px solid #ddda;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+body:has(.App.dark) .publication__container{
+    border-bottom: 1px solid #222;
+}
+
+.publication-content__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.publication-content__container img,
+.publication-content__container video{
+    width: clamp(100px, 50dvw, 300px);
+    border-radius: 8px;
+}
+
+.publication-content__container video{
+    width: clamp(100px, 50dvw, 500px);
+}
+
+.publication-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.publication-top__user-info{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .9rem;
+}
+
+.verify-icon{
+    color: #48e;
+}
+
+.publication-top__user-info img{
+    width: clamp(32px, 10dvw, 64px);
+    border-radius: 50%;
+}
+
+.publication-interactions__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    color: #888;
+}
+
+.main-interactions{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.user-info__account{
+    color: #888;
+}
+
+.publication-interactions__like,
+.publication-interactions__retweet,
+.publication-interactions__comments{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon{
+    font-size: 1.3rem;
+}
+
+.like-icon{
+    animation: like .4s both;
+}
+
+
+.animated-like{
+    color: #b36;
+    animation: like .4s both;
+}
+
+.rt-animated{
+    color: #2a5;
+    animation: retweet .4s both;
+}
+
+@keyframes like{
+    0%{
+        scale: .5;
+    }
+
+    50%{
+        scale: 1.5;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
+@keyframes retweet{
+    0%{
+        scale: .5;
+    }
+
+    50%{
+        scale: 1.5;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
